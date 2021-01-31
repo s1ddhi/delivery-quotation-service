@@ -1,0 +1,22 @@
+*.class
+
+# Package Files
+*.jar
+*.war
+*.ear
+
+# Gradle
+.gradle/
+build/
+
+# MacOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+.settings/
+bin/
+.classpath
+.project
+
