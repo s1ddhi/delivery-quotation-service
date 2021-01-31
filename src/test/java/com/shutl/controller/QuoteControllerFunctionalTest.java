@@ -25,7 +25,7 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppC
 @WebAppConfiguration
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
-public class QuoteControllerQuoteEndpointFunctionalTest {
+public class QuoteControllerFunctionalTest {
 
   ObjectMapper objectMapper = new ObjectMapper();
   @Autowired private WebApplicationContext webApplicationContext;

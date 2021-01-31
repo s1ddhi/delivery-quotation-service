@@ -32,7 +32,7 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppC
 @WebAppConfiguration
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
-public class QuoteControllerQuoteEndpointErrorHandlingTest {
+public class QuoteControllerErrorHandlingTest {
 
   ObjectMapper objectMapper = new ObjectMapper();
   String uniqueQuoteMissingParametersMessageArtifact =

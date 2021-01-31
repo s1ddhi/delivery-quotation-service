@@ -31,7 +31,7 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppC
 @WebAppConfiguration
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
-public class QuoteControllerVehicleQuoteEndpointErrorHandling {
+public class VehicleQuoteControllerErrorHandling {
 
   private final String uniqueVehicleQuoteMissingAttributesMessageArtifact =
       Arrays.toString(VehicleConstants.REQUIRED_ATTRIBUTES);
