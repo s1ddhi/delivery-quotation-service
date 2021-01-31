@@ -10,8 +10,8 @@ Documentation for each endpoint can be found in the [docs](docs) directory or vi
 
 ### Error Handling
 
-For both endpoints, invalid postcodes and missing attributes are reported. While specifically for the [**
-VehicleQuote**](docs/VehicleQuoteEndpoint.md) endpoint, an additional check is completed to ensure only current valid
+For both endpoints, invalid postcodes and missing attributes are reported. While specifically for the [
+VehicleQuote](docs/VehicleQuoteEndpoint.md) endpoint, an additional check is completed to ensure only current valid
 vehicle types are submitted.
 
 This means any API requests should fail gracefully and report specific error messages as to why the request was not
