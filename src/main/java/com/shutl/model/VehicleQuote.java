@@ -65,13 +65,12 @@ public class VehicleQuote extends Quote {
   }
 
   /**
-   * Checks whether there are missing parameters to create a Quote object completely.
+   * Checks whether there are missing attributes to create a Quote object completely.
    *
-   * @return whether there are missing parameters.
+   * @return whether there are missing attributes.
    */
-  @Override
-  public Boolean missingParameters() {
-    return (this.type == null || super.missingParameters());
+  public Boolean missingAttributes() {
+    return (this.type == null || super.missingAttributes());
   }
 
   public String getType() {

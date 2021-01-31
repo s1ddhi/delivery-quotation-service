@@ -51,9 +51,9 @@ This is the response following the example request shown above.
 }
 ```
 
-### Error - Missing Parameters
+### Error - Missing Attribute(s)
 
-**Condition**: Request body did not have a required parameter.
+**Condition**: Request body did not have a required attribute.
 
 **Code**: `400 BAD REQUEST`
 
@@ -73,8 +73,8 @@ This is the response following the example request shown above.
   "timestamp": 1612107909286,
   "status": 400,
   "error": "Bad Request",
-  "exception": "com.shutl.exceptions.MissingParametersException",
-  "message": "You are missing some parameters. Please include: [type, deliveryPostcode, pickupPostcode]",
+  "exception": "com.shutl.exceptions.MissingAttributesException",
+  "message": "You are missing some attributes. Please include: [type, deliveryPostcode, pickupPostcode]",
   "path": "/quote/vehicle"
 }
 ```

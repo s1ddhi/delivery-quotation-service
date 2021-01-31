@@ -12,7 +12,7 @@ public class VehicleConstants {
 
   public static final String[] VEHICLE_TYPES =
       new String[] {"bicycle", "motorbike", "parcel_car", "small_van", "large_van"};
-  public static final String[] REQUIRED_PARAMETERS =
+  public static final String[] REQUIRED_ATTRIBUTES =
       new String[] {"type", "deliveryPostcode", "pickupPostcode"};
   private static final double BICYCLE_MARKUP = 1.1;
   private static final double MOTORBIKE_MARKUP = 1.15;

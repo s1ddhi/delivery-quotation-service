@@ -31,11 +31,11 @@ public class Quote {
   }
 
   /**
-   * Checks whether there are missing parameters to create a Quote object completely.
+   * Checks whether there are missing attributes to create a Quote object completely.
    *
-   * @return whether there are missing parameters.
+   * @return whether there are missing attributes.
    */
-  public Boolean missingParameters() {
+  public Boolean missingAttributes() {
     return (this.deliveryPostcode == null || this.pickupPostcode == null);
   }
 

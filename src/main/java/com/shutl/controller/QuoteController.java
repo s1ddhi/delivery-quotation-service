@@ -5,7 +5,7 @@ import com.shutl.constants.QuoteConstants;
 import com.shutl.constants.VehicleConstants;
 import com.shutl.exceptions.InvalidPostCodeException;
 import com.shutl.exceptions.InvalidVehicleTypeException;
-import com.shutl.exceptions.MissingParametersException;
+import com.shutl.exceptions.MissingAttributesException;
 import com.shutl.model.Quote;
 import com.shutl.model.VehicleQuote;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,7 +25,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 public class QuoteController {
 
   /**
-   * Handles POST requests for `/quote` requests, ensuring that all parameters are present and
+   * Handles POST requests for `/quote` requests, ensuring that all attributes are present and
    * postcodes specified are valid before a result is provided. Otherwise, a specific error will be
    * reported to the user.
    *
@@ -34,8 +34,8 @@ public class QuoteController {
    */
   @RequestMapping(value = QuoteConstants.ENDPOINT, method = POST)
   public @ResponseBody Quote quote(@RequestBody Quote quote) {
-    if (Boolean.TRUE.equals(quote.missingParameters())) {
-      throw new MissingParametersException(QuoteConstants.REQUIRED_PARAMETERS);
+    if (Boolean.TRUE.equals(quote.missingAttributes())) {
+      throw new MissingAttributesException(QuoteConstants.REQUIRED_ATTRIBUTES);
     }
 
     if (!Quote.validPostcode(quote.getDeliveryPostcode())) {
@@ -57,7 +57,7 @@ public class QuoteController {
   }
 
   /**
-   * Handles POST requests for `/quote/vehicle` requests, ensuring that all parameters are present,
+   * Handles POST requests for `/quote/vehicle` requests, ensuring that all attributes are present,
    * postcodes specified are valid and types are also valid before a result is provided. Otherwise,
    * a specific error will be reported to the user.
    *
@@ -66,8 +66,8 @@ public class QuoteController {
    */
   @RequestMapping(value = VehicleConstants.ENDPOINT, method = POST)
   public @ResponseBody VehicleQuote vehicleQuote(@RequestBody VehicleQuote quote) {
-    if (Boolean.TRUE.equals(quote.missingParameters())) {
-      throw new MissingParametersException(VehicleConstants.REQUIRED_PARAMETERS);
+    if (Boolean.TRUE.equals(quote.missingAttributes())) {
+      throw new MissingAttributesException(VehicleConstants.REQUIRED_ATTRIBUTES);
     }
 
     if (!Quote.validPostcode(quote.getDeliveryPostcode())) {

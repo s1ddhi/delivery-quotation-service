@@ -48,9 +48,9 @@ This is the response following the example request shown above.
 }
 ```
 
-### Error - Missing Parameters
+### Error - Missing Attribute(s)
 
-**Condition**: Request body did not have a required parameter.
+**Condition**: Request body did not have a required attribute.
 
 **Code**: `400 BAD REQUEST`
 
@@ -71,8 +71,8 @@ Here, the `pickupPostcode` attribute that is required is missing.
     "timestamp": 1612107296788,
     "status": 400,
     "error": "Bad Request",
-    "exception": "com.shutl.exceptions.MissingParametersException",
-    "message": "You are missing some parameters. Please include: [deliveryPostcode, pickupPostcode]",
+    "exception": "com.shutl.exceptions.MissingAttributesException",
+    "message": "You are missing some attributes. Please include: [deliveryPostcode, pickupPostcode]",
     "path": "/quote"
 }
 ```

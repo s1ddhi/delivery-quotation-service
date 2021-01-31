@@ -4,6 +4,6 @@ package com.shutl.constants;
 public class QuoteConstants {
   public static final String ENDPOINT = "/quote";
 
-  public static final String[] REQUIRED_PARAMETERS =
+  public static final String[] REQUIRED_ATTRIBUTES =
       new String[] {"deliveryPostcode", "pickupPostcode"};
 }
