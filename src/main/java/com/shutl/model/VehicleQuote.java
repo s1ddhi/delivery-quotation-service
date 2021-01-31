@@ -11,11 +11,15 @@ import java.util.Arrays;
 public class VehicleQuote extends Quote {
   String type;
 
-  public VehicleQuote() {}
+  public VehicleQuote() {
+    super();
+  }
 
   public VehicleQuote(String pickupPostcode, String deliveryPostcode, String type) {
     super(pickupPostcode, deliveryPostcode);
-    this.type = type.toLowerCase();
+    if (type != null) {
+      this.type = type.toLowerCase();
+    }
   }
 
   private VehicleQuote(String pickupPostcode, String deliveryPostcode, Long price) {
@@ -24,7 +28,9 @@ public class VehicleQuote extends Quote {
 
   public VehicleQuote(String pickupPostcode, String deliveryPostcode, String type, Long price) {
     this(pickupPostcode, deliveryPostcode, markedUpPrice(price, type));
-    this.type = type.toLowerCase();
+    if (validVehicleType(type)) {
+      this.type = type.toLowerCase();
+    }
   }
 
   /**
@@ -34,7 +40,8 @@ public class VehicleQuote extends Quote {
    * @return whether the type to check is permitted or not.
    */
   public static boolean validVehicleType(String type) {
-    return Arrays.asList(VehicleConstants.VEHICLE_TYPES).contains(type.toLowerCase());
+    return type != null
+        && Arrays.asList(VehicleConstants.VEHICLE_TYPES).contains(type.toLowerCase());
   }
 
   /**
@@ -77,7 +84,31 @@ public class VehicleQuote extends Quote {
     return this.type;
   }
 
+  /**
+   * Required as part of deserialising JSON object from REST requests. To allow for errors to be
+   * tested, this method DOES NOT verify validity of the vehicle type specified. The only check is
+   * to ensure type is not null before it is set.
+   *
+   * <p>USE changeType(String type) INSTEAD.
+   *
+   * @param type of vehicle specified.
+   */
   public void setType(String type) {
-    this.type = type.toLowerCase();
+    if (type != null) {
+      this.type = type.toLowerCase();
+    }
+  }
+
+  /**
+   * Sets the vehicle type.
+   *
+   * <p>USE THIS INSTEAD OF setType(String Type).
+   *
+   * @param type of vehicle specified.
+   */
+  public void changeType(String type) {
+    if (validVehicleType(type)) {
+      this.type = type.toLowerCase();
+    }
   }
 }

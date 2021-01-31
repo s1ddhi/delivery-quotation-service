@@ -5,51 +5,51 @@
     <link rel="stylesheet" th:href="@{/styles/vehicleQuote.css}"/>
 </head>
 <body>
-    <table>
-        <tr>
-            <td class="titleTable" colspan="2">
-                <h1>Quotation:</h1>
-            </td>
-        </tr>
-        <tr>
-            <td class="labelTableColumn"><p>Pickup Postcode</p></td>
-            <td class="valueTableColumn"><p th:text="${vehicleQuote.getPickupPostcode()}"/></td>
-        </tr>
-        <tr>
-            <td class="labelTableColumn"><p>Delivery Postcode</p></td>
-            <td class="valueTableColumn"><p th:text="${vehicleQuote.getDeliveryPostcode()}"/></td>
-        </tr>
-        <tr>
-            <td class="labelTableColumn"><p>Vehicle Type</p></td>
-            <td class="valueTableColumn"><p th:text="${vehicleQuote.getType()}"/></td>
-        </tr>
-        <tr>
-            <td class="labelTableColumn"><p>Price</p></td>
-            <td class="valueTableColumn"><p th:text="'£' + ${vehicleQuote.getPrice()}"/></td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <div class="boxed">
-                    <p>
-                        A delivery from
-                        <spane th:text="${vehicleQuote.getPickupPostcode()}"/>
-                        to <span th:text="${vehicleQuote.getDeliveryPostcode()}"/> using a <span
-                            th:text="${vehicleQuote.getType()}"/> will cost you £<span
-                            th:text="${vehicleQuote.getPrice()}"/>.
-                    </p>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td class="itemTable">
-                <div class="buttonrow">
-                    <a href="/getvehiclequote">
-                        <button class="requotebutton">Get another quotation</button>
-                    </a>
-                </div>
-            </td>
-        </tr>
-    </table>
+<table>
+    <tr>
+        <td class="titleTable" colspan="2">
+            <h1>Quotation:</h1>
+        </td>
+    </tr>
+    <tr>
+        <td class="labelTableColumn"><p>Pickup Postcode</p></td>
+        <td class="valueTableColumn"><p th:text="${vehicleQuote.getPickupPostcode()}"/></td>
+    </tr>
+    <tr>
+        <td class="labelTableColumn"><p>Delivery Postcode</p></td>
+        <td class="valueTableColumn"><p th:text="${vehicleQuote.getDeliveryPostcode()}"/></td>
+    </tr>
+    <tr>
+        <td class="labelTableColumn"><p>Vehicle Type</p></td>
+        <td class="valueTableColumn"><p th:text="${vehicleQuote.getType()}"/></td>
+    </tr>
+    <tr>
+        <td class="labelTableColumn"><p>Price</p></td>
+        <td class="valueTableColumn"><p th:text="'£' + ${vehicleQuote.getPrice()}"/></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div class="boxed">
+                <p>
+                    A delivery from
+                    <spane th:text="${vehicleQuote.getPickupPostcode()}"/>
+                    to <span th:text="${vehicleQuote.getDeliveryPostcode()}"/> using a <span
+                        th:text="${vehicleQuote.getType()}"/> will cost you £<span
+                        th:text="${vehicleQuote.getPrice()}"/>.
+                </p>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td class="itemTable">
+            <div class="buttonrow">
+                <a href="/getvehiclequote">
+                    <button class="requotebutton">Get another quotation</button>
+                </a>
+            </div>
+        </td>
+    </tr>
+</table>
 </body>
 </html>

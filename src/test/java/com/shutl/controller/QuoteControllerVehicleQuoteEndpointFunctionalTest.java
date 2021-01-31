@@ -28,7 +28,7 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppC
 @WebAppConfiguration
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
-public class QuoteControllerVehicleEndpointFunctionalTest {
+public class QuoteControllerVehicleQuoteEndpointFunctionalTest {
 
   ObjectMapper objectMapper = new ObjectMapper();
   @Autowired private WebApplicationContext webApplicationContext;
@@ -137,5 +137,25 @@ public class QuoteControllerVehicleEndpointFunctionalTest {
     assertEquals(quote.getDeliveryPostcode(), "EC2A3LT");
     assertEquals(quote.getType(), "large_van");
     assertEquals(quote.getPrice(), new Long(442));
+  }
+
+  @Test
+  public void testCapitalisationOfType() throws Exception {
+    Quote quoteData = new VehicleQuote("SW1A1AA", "EC2A3LT", "BiCYcLE");
+    MvcResult result =
+        this.mockMvc
+            .perform(
+                post(VehicleConstants.ENDPOINT)
+                    .contentType("application/json")
+                    .content(objectMapper.writeValueAsString(quoteData)))
+            .andExpect(status().isOk())
+            .andReturn();
+
+    VehicleQuote quote =
+        objectMapper.readValue(result.getResponse().getContentAsString(), VehicleQuote.class);
+    assertEquals(quote.getPickupPostcode(), "SW1A1AA");
+    assertEquals(quote.getDeliveryPostcode(), "EC2A3LT");
+    assertEquals(quote.getType(), "bicycle");
+    assertEquals(quote.getPrice(), new Long(348));
   }
 }
