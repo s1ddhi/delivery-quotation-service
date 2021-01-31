@@ -1,0 +1,128 @@
+h1 {
+    font-size: 5rem;
+    font-family: Arial, sans-serif;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.container {
+    display: flex;
+    align-content: center;
+}
+
+input {
+    font-size: 1.5rem;
+}
+
+select {
+    font-size: 1.5rem;
+}
+
+body {
+    font-size: 2rem;
+    font-family: "Market Sans", Arial, sans-serif;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+@media only screen and (min-width: 576px) {
+    table {
+        width: 75%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    table {
+        width: 65%;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    table {
+        width: 55%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    table {
+        width: 700px;
+    }
+}
+
+td {
+    padding-bottom: 4vh;
+}
+
+.titleTable {
+    text-align: center;
+}
+
+.itemTable {
+    margin: auto;
+}
+
+.boxed {
+    border: 0.2em solid black;
+    padding: 2rem;
+    margin: 1rem;
+}
+
+
+.labelTableColumn {
+    text-align: left;
+}
+
+.valueTableColumn {
+    text-align: right;
+}
+
+.inputlabel {
+    width: 30%;
+}
+
+.row {
+    overflow: hidden;
+    padding-bottom: 2vh;
+}
+
+.buttonrow {
+    padding-top: 2vh;
+    margin: auto;
+    float: right;
+}
+
+.input {
+    width: 70%;
+}
+
+.requotebutton {
+    background-color: #4295ff;
+    border: none;
+    color: white;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    font-size: 1em
+}
+
+input[type=submit] {
+    background-color: #0654ba;
+    border: none;
+    color: white;
+    padding: 0.5em 1em;
+    cursor: pointer;
+}
+
+input[type=reset] {
+    background-color: #ccc;
+    border: none;
+    color: #767676;
+    padding: 0.5em 1em;
+    cursor: pointer;
+}

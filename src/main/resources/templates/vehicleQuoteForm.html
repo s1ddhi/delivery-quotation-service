@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Vehicle Delivery Quote</title>
+    <link rel="stylesheet" th:href="@{/styles/vehicleQuote.css}"/>
+</head>
+<body>
+    <form action="#" method="POST" th:action="@{/getvehiclequote}" th:object="${vehicleQuote}">
+        <table>
+            <tr>
+                <td class="titleTable" colspan="2">
+                    <h1>Delivery Quote</h1>
+                </td>
+            </tr>
+            <tr>
+                <td class="labelTableColumn">
+                    <label for="pPostcode">Pickup Postcode: </label>
+                </td>
+                <td class="valueTableColumn">
+                    <input id="pPostcode" pattern="^(\w)+$" size="10"
+                           th:field="*{pickupPostcode}"
+                           th:required="required" title="A valid postcode with no spaces or special characters. For example EC2A3LT" type="text"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="labelTableColumn">
+                    <label for="dPostcode">Delivery Postcode: </label>
+                </td>
+                <td class="valueTableColumn">
+                    <input id="dPostcode" pattern="^(\w)+$" size="10"
+                           th:field="*{deliveryPostcode}"
+                           th:required="required" title="A valid postcode with no spaces or special characters. For example EC2A3LT" type="text"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="labelTableColumn">
+                    <label for="vType">Vehicle Type: </label>
+                </td>
+                <td class="valueTableColumn">
+                    <select id="vType" th:field="*{type}" th:required="required">
+                        <option th:text="bicycle" th:value="'bicycle'"></option>
+                        <option th:text="motorbike" th:value="'motorbike'"></option>
+                        <option th:text="parcel_car" th:value="'parcel_car'"></option>
+                        <option th:text="small_van" th:value="'small_van'"></option>
+                        <option th:text="large_van" th:value="'large_van'"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <div class="buttonrow">
+                        <input type="reset" value="Reset"/>
+                        <input type="submit" value="Calculate"/>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+    </body>
+</html>

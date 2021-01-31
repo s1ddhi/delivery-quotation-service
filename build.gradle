@@ -24,6 +24,7 @@ configurations {
 dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'org.springframework.boot:spring-boot-starter-test'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf'
 }
 
 springBoot {
