@@ -84,6 +84,12 @@ td {
     text-align: right;
 }
 
+.waitingMessage {
+    text-align: center;
+    padding-top: 4vh;
+    color: #767676;
+}
+
 .inputlabel {
     width: 30%;
 }

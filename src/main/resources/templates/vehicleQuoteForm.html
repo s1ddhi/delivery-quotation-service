@@ -5,6 +5,19 @@
     <link rel="stylesheet" th:href="@{/styles/vehicleQuote.css}"/>
 </head>
 <body>
+<script>
+    function waitingIndicator() {
+        const waitingTextTr = document.createElement("tr");
+        const waitingTextTd = document.createElement("td");
+        waitingTextTd.append(document.createTextNode("We are processing your quotation."));
+        waitingTextTd.setAttribute("colspan", "2");
+        waitingTextTd.className = "waitingMessage";
+        waitingTextTr.appendChild(waitingTextTd);
+
+        const buttonsRow = document.getElementById("buttons");
+        buttonsRow.insertAdjacentElement('afterend', waitingTextTr);
+    }
+</script>
 <form action="#" method="POST" th:action="@{/getvehiclequote}" th:object="${vehicleQuote}">
     <table>
         <tr>
@@ -48,12 +61,12 @@
                 </select>
             </td>
         </tr>
-        <tr>
+        <tr id="buttons">
             <td></td>
             <td>
                 <div class="buttonrow">
                     <input type="reset" value="Reset"/>
-                    <input type="submit" value="Calculate"/>
+                    <input th:onclick="'waitingIndicator();'" type="submit" value="Calculate"/>
                 </div>
             </td>
         </tr>
